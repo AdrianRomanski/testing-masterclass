@@ -1,4 +1,4 @@
-package generics_calculator;
+package chapter01;
 
 import chapter01.generics_calculator.factory.IntegerCalculator;
 import chapter01.generics_calculator.operations.Operation;

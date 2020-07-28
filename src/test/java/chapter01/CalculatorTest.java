@@ -1,4 +1,4 @@
-package calculator;
+package chapter01;
 
 import chapter01.calculator.client.Calculator;
 import chapter01.calculator.exceptions.OperationNotSupported;

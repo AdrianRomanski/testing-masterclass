@@ -1,3 +1,5 @@
+package chapter01;
+
 import chapter01.SimpleCalculator;
 import org.junit.jupiter.api.Test;
 

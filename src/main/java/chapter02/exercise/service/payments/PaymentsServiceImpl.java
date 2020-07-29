@@ -7,12 +7,15 @@ import chapter02.exercise.service.id_generator.IdGenerator;
 import chapter02.exercise.service.id_generator.IdGeneratorType;
 import chapter02.exercise.service.tax.TaxProvider;
 
+import lombok.extern.java.Log;
+import org.apache.commons.math3.util.Precision;
+
 
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-
+@Log
 public class PaymentsServiceImpl implements PaymentsService {
 
     private final TaxProvider taxProvider;
@@ -35,6 +38,7 @@ public class PaymentsServiceImpl implements PaymentsService {
                 .tax(taxProvider.getVatForUser(user))
                 .build();
         user.getPayments().add(payment);
+        log.info("Payment with " + products.size() + " products successfully initialized");
         return payment;
     }
 
@@ -50,6 +54,7 @@ public class PaymentsServiceImpl implements PaymentsService {
             price = price + (price * payment.getTax());
             finalPrice+=price;
         }
-        return finalPrice;
+        log.info("Final price of the payment with id: " + payment.getId() + " is " + Precision.round(finalPrice, 2) + "$");
+        return Precision.round(finalPrice, 2);
     }
 }

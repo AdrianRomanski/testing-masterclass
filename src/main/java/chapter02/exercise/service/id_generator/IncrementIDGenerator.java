@@ -1,7 +1,9 @@
 package chapter02.exercise.service.id_generator;
 
 import lombok.Setter;
+import lombok.extern.java.Log;
 
+@Log
 @IdGeneratorType("incrementalIDGenerator")
 public class IncrementIDGenerator implements IdGenerator {
 
@@ -12,6 +14,7 @@ public class IncrementIDGenerator implements IdGenerator {
 
     @Override
     public String getNext() {
+        log.info("ID: " + String.format(ID_FORMAT, index) + " Generated with IncrementalIdGenerator");
         return String.format(ID_FORMAT, ++index);
     }
 }

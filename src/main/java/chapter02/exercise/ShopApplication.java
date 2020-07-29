@@ -28,12 +28,14 @@ public class ShopApplication {
         final var productService = new ProductServiceImpl(uuidGenerator);
 
         var user = userService.createUser("Adrian", "Romanski", POLAND);
+        log.info("User id: " + user.getId());
 
         var book = productService.createProduct("Book", 14.99);
         var chocolateBar = productService.createProduct("Chocolate bar", 2.44);
         var coca_cola = productService.createProduct("Coca Cola", 1.59);
 
         var payment = paymentsService.addPayment(user, Arrays.asList(book, chocolateBar, coca_cola));
+        log.info("Payment id: " + payment.getId());
 
         log.info("Final price of payment with Products: " + paymentsService.countFinalPrice(payment));
 

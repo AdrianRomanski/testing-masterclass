@@ -13,4 +13,8 @@ public enum Country {
     Country(Double taxRatio) {
         this.taxRatio = taxRatio;
     }
+
+    public String getCountryName() {
+        return this.name();
+    }
 }

@@ -37,6 +37,7 @@ class LeapYearsTDDTest {
         assertThat(resultFourth).isTrue();
     }
 
+
     @Test
     @DisplayName("Testing condition - All years divisible by 100 but no by 400 are NOT leap years")
     void shouldReturnFalseDivisibleBy100ButNotBy400() {
@@ -76,6 +77,7 @@ class LeapYearsTDDTest {
         assertThat(resultFourth).isTrue();
     }
 
+
     @Test
     @DisplayName("Testing condition - All years NOT divisible by 4 ARE NOT leap years")
     void shouldReturnFalseNotDivisibleBy4() {
@@ -89,9 +91,27 @@ class LeapYearsTDDTest {
         boolean resultThird = leapYearsTDD.isLeapYear(third);
         boolean resultFourth = leapYearsTDD.isLeapYear(fourth);
 
-        assertThat(resultFirst).isTrue();
-        assertThat(resultSecond).isTrue();
-        assertThat(resultThird).isTrue();
-        assertThat(resultFourth).isTrue();
+        assertThat(resultFirst).isFalse();
+        assertThat(resultSecond).isFalse();
+        assertThat(resultThird).isFalse();
+        assertThat(resultFourth).isFalse();
+    }
+
+
+    @Test
+    @DisplayName("Testing condition - Input lower than zero should throw an exception")
+    void shouldThrowExceptionYearLowerThanZero() {
+        assertThatExceptionOfType(RuntimeException.class)
+                .isThrownBy(() -> leapYearsTDD.isLeapYear(-1))
+                .withMessage("Year cannot be lower than zero");
+    }
+
+
+    @Test
+    @DisplayName("Testing condition - Input is zero should throw an exception")
+    void shouldThrowExceptionYearIsZero() {
+        assertThatExceptionOfType(RuntimeException.class)
+                .isThrownBy(() -> leapYearsTDD.isLeapYear(0))
+                .withMessage("Year cannot be zero");
     }
 }

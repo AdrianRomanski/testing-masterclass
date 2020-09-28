@@ -40,7 +40,7 @@ public class IntegerCalculatorTest {
 
 
     @Test
-    @DisplayName("HappyPath, Operation - Add")
+    @DisplayName("Should Return Sum Of Two Numbers")
     public void testingAdd() {
         Integer result = calculator.add(2, 2);
 
@@ -49,7 +49,7 @@ public class IntegerCalculatorTest {
 
 
     @Test
-    @DisplayName("HappyPath, Operation - Divide")
+    @DisplayName("Should Return Quotient of Dividend and Divisor")
     public void testingDivide() {
         Integer result = calculator.divide(8, 6);
 
@@ -58,7 +58,7 @@ public class IntegerCalculatorTest {
 
 
     @Test
-    @DisplayName("HappyPath, Operation - Multiply")
+    @DisplayName("Should Return Product Of Factors")
     public void testingMultiply() {
         Integer result = calculator.multiply(2, 3);
 
@@ -67,7 +67,7 @@ public class IntegerCalculatorTest {
 
 
     @Test
-    @DisplayName("HappyPath, Operation - Subtraction")
+    @DisplayName("Should Return Difference Of Two Numbers")
     public void testingSubtract() {
         Integer result = calculator.subtract(6, 2);
 

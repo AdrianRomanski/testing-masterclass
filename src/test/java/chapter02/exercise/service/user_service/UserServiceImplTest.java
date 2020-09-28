@@ -29,8 +29,9 @@ class UserServiceImplTest {
         MockitoAnnotations.initMocks(this);
     }
 
+
     @Test
-    @DisplayName("Happy Path, method = createUser")
+    @DisplayName("Should Create New User with firstName, lastName and Nationality and Generate ID")
     void createUser() {
         //when
         when(idGenerator.getNext()).thenReturn(ID);

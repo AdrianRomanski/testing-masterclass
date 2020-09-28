@@ -20,7 +20,7 @@ class TaxProviderImplTest {
     }
 
     @Test
-    @DisplayName("Get Default Vat")
+    @DisplayName("Should Return Default Tax Value If No Specified By User")
     void getDefaultVat() {
         //when
         var tax = taxProvider.getDefaultVat();
@@ -29,7 +29,7 @@ class TaxProviderImplTest {
     }
 
     @Test
-    @DisplayName("Get Vat for User")
+    @DisplayName("Should Return Tax Specified By User Nationality")
     void getVatForUser() {
         //given
         var user = User.builder().firstName(FIRST_NAME).lastName(LAST_NAME).country(BELGIUM).build();

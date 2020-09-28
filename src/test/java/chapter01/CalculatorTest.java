@@ -33,7 +33,7 @@ public class CalculatorTest {
 
 
     @Test
-    @DisplayName("HappyPath, Operation - Add")
+    @DisplayName("Should Return Sum Of Two Numbers")
     public void testingAdd() {
         Double result = calculator.getOperation("Add").calculate(2.0, 2.0);
 
@@ -42,7 +42,7 @@ public class CalculatorTest {
 
 
     @Test
-    @DisplayName("HappyPath, Operation - Divide")
+    @DisplayName("Should Return Quotient of Dividend and Divisor")
     public void testingDivide() {
         Double result = calculator.getOperation("Divide").calculate(4.0, 2.0);
 
@@ -51,7 +51,7 @@ public class CalculatorTest {
 
 
     @Test
-    @DisplayName("HappyPath, Operation - Multiply")
+    @DisplayName("Should Return Product Of Factors")
     public void testingMultiply() {
         Double result = calculator.getOperation("Multiply").calculate(2.0, 3.0);
 
@@ -60,7 +60,7 @@ public class CalculatorTest {
 
 
     @Test
-    @DisplayName("HappyPath, Operation - Subtraction")
+    @DisplayName("Should Return Difference Of Two Numbers")
     public void testingSubtract() {
         Double result = calculator.getOperation("Subtraction").calculate(6.0, 2.0);
 
@@ -69,7 +69,7 @@ public class CalculatorTest {
 
 
     @Test
-    @DisplayName("UnHappyPath, Adding Duplicate Operation")
+    @DisplayName("Should return count of total operations")
     public void testingHashMap() {
         int size = calculator.getOperations().size(); // I rather to have it in variable, so i dont have to change it anymore if more operations added
 
@@ -81,7 +81,7 @@ public class CalculatorTest {
 
 
     @Test
-    @DisplayName("UnHappyPath, Method = getOperation(), Reason - Wrong Operation Name")
+    @DisplayName("Should throw an exception when called wrong name")
     public void testingGetOperationMethodUnhappyPath() {
         Throwable ex = catchThrowable(() -> calculator.getOperation("Pepperoni Pizza"));
 

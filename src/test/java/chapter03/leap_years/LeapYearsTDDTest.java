@@ -1,6 +1,5 @@
 package chapter03.leap_years;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -19,7 +18,7 @@ class LeapYearsTDDTest {
 
 
     @Test
-    @DisplayName("Testing condition - All years divisible by 400 ARE leap years")
+    @DisplayName("Should Return True if Year is Divisible by 400")
     void shouldReturnTrueDivisibleBy400() {
         int first = 2000;
         int second = 400;
@@ -39,7 +38,7 @@ class LeapYearsTDDTest {
 
 
     @Test
-    @DisplayName("Testing condition - All years divisible by 100 but no by 400 are NOT leap years")
+    @DisplayName("Should Return False if Year is Divisible by 100 but not by 400")
     void shouldReturnFalseDivisibleBy100ButNotBy400() {
         int first = 1700;
         int second = 1800;
@@ -59,7 +58,7 @@ class LeapYearsTDDTest {
 
 
     @Test
-    @DisplayName("Testing condition - All years divisible by 100 but no by 400 ARE leap years")
+    @DisplayName("Should Return True if Year is Divisible by 4 but not by 100")
     void shouldReturnTrueDivisibleBy4ButNoBy100() {
         int first = 4;
         int second = 80;
@@ -79,7 +78,7 @@ class LeapYearsTDDTest {
 
 
     @Test
-    @DisplayName("Testing condition - All years NOT divisible by 4 ARE NOT leap years")
+    @DisplayName("Should Return False if Year is not Divisible by 4")
     void shouldReturnFalseNotDivisibleBy4() {
         int first = 2017;
         int second = 2018;
@@ -99,7 +98,7 @@ class LeapYearsTDDTest {
 
 
     @Test
-    @DisplayName("Testing condition - Input lower than zero should throw an exception")
+    @DisplayName("Should Throw an Exception if Input is Lower Than Zero")
     void shouldThrowExceptionYearLowerThanZero() {
         assertThatExceptionOfType(RuntimeException.class)
                 .isThrownBy(() -> leapYearsTDD.isLeapYear(-1))
@@ -108,7 +107,7 @@ class LeapYearsTDDTest {
 
 
     @Test
-    @DisplayName("Testing condition - Input is zero should throw an exception")
+    @DisplayName("Should Throw an Exception if Input is Equal to Zero")
     void shouldThrowExceptionYearIsZero() {
         assertThatExceptionOfType(RuntimeException.class)
                 .isThrownBy(() -> leapYearsTDD.isLeapYear(0))

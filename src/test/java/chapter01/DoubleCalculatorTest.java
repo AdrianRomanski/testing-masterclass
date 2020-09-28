@@ -41,7 +41,7 @@ public class DoubleCalculatorTest {
 
 
     @Test
-    @DisplayName("HappyPath, Operation - Add")
+    @DisplayName("Should Return Sum Of Two Numbers")
     public void testingAdd() {
         Double result = calculator.add(2.0, 2.0);
 
@@ -50,7 +50,7 @@ public class DoubleCalculatorTest {
 
 
     @Test
-    @DisplayName("HappyPath, Operation - Divide")
+    @DisplayName("Should Return Quotient of Dividend and Divisor")
     public void testingDivide() {
         Double result = calculator.divide(4.0, 2.0);
 
@@ -59,7 +59,7 @@ public class DoubleCalculatorTest {
 
 
     @Test
-    @DisplayName("HappyPath, Operation - Multiply")
+    @DisplayName("Should Return Product Of Factors")
     public void testingMultiply() {
         Double result = calculator.multiply(2.0, 3.0);
 
@@ -68,7 +68,7 @@ public class DoubleCalculatorTest {
 
 
     @Test
-    @DisplayName("HappyPath, Operation - Subtraction")
+    @DisplayName("Should Return Difference Of Two Numbers")
     public void testingSubtract() {
         Double result = calculator.subtract(6.0, 2.0);
 

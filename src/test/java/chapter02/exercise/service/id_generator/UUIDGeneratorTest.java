@@ -21,7 +21,7 @@ class UUIDGeneratorTest {
     }
 
     @Test
-    @DisplayName("Get Next - UUIDGenerator")
+    @DisplayName("Should Return Next Id With Correct Pattern")
     void getNext() {
         //when
         var uuid1 = idGenerator.getNext();

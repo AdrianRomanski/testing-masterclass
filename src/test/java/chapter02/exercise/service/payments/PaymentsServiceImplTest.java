@@ -43,7 +43,7 @@ class PaymentsServiceImplTest {
     }
 
     @Test
-    @DisplayName("Happy Path, Method = Add Payment")
+    @DisplayName("Should Create New Payment and Add it to The User")
     void addPayment() {
         //when
         when(taxProvider.getVatForUser(user)).thenReturn(TAX);
@@ -59,7 +59,7 @@ class PaymentsServiceImplTest {
 
 
     @Test
-    @DisplayName("Happy Path, Method = Count Final Price")
+    @DisplayName("Should Count Final Price From Base Product Price And Tax From User Country")
     void countFinalPrice() {
         //given
         var payment = Payment.builder().tax(TAX).id(ID).products(products).user(user).build();

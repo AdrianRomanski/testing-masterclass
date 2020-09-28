@@ -21,7 +21,7 @@ class IncrementIDGeneratorTest {
 
 
     @Test
-    @DisplayName("Get Next - IncrementalIDGenerator")
+    @DisplayName("Should Return Next Id With Correct Pattern")
     void getNext() {
         //when
         var returnID = idGenerator.getNext();
